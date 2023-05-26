@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relogio Digital</title>
+  <style>
+    *{
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
+      display: flex;
+      align-items: center; /* alinhou intens da pagina no lado esquerdo da tela;*/;
+      justify-content: center; /* alinhou intens no centro da página*/
+    }
+
+    .relogio {
+      display: flex; /* alinhou intens os lada a lado*/
+      align-items: center;
+      justify-content: space-around;  /* da espaçamento entre os intens pra não fica colados*/
+      height: 200px;
+      width: 550px;
+      background: transparent;
+      border-radius: 3px;
+      box-shadow: 0px 8px 10px rgba(0,0,0,.5);
+    }
+
+    .relogio div {
+      height: 170px;
+      width: 150px;
+      display: flex;
+      flex-direction: column; /* alinha os intens um abaixo do outro*/
+      align-items: center; /* alinha os intens no centro em cima*/
+      justify-content: center; /* alinha os intens no centro da div bem no meio*/
+      /*font-size: 60px;  tamanho da fonte vai fica por conta do span*/
+      color: #fff;
+      background: rgba(5, 5, 5, 0.9);
+      box-shadow: 5px 5px 15px rgba(0,0,0, .7);
+      border-radius: 7px;
+      letter-spacing: 3px; /* espaçamento da letra */
+    }
+
+    .relogio span { /* estilizando os mostradores do relogio*/
+      font-weight: bolder;  /* engrossa o tamanho da fonte*/
+      font-size: 60px; 
+    }
+
+    .relogio span.tempo { /* estilizando somente span tempo os nomes*/
+      font-size: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="relogio">
+      <div>
+        <span id="horas">00</span>
+        <span class="tempo">Horas</span> 
+      </div>
+
+      <div>
+        <span id="minutos">00</span>
+        <span class="tempo">Minutos</span> 
+      </div>
+
+      <div>
+        <span id="segundos">00</span>
+        <span class="tempo">Segundos</span> 
+      </div>
+  </div>
+
+  <script>
+    const horas = document.querySelector('#horas');
+    const minutos = document.querySelector('#minutos');
+    const segundos = document.querySelector('#segundos');
+
+    const relogio = setInterval(function time() {  // função tempo que vai pegar os dados da hora;
+      let dateToday = new Date(); // criada a variavel pegar a hora da data de hoje
+      let hr = dateToday.getHours();
+      let min = dateToday.getMinutes();
+      let seg = dateToday.getSeconds();
+
+      // if para acrescentar o zero na frente do 1 ao 9;
+      if (hr < 10) hr = '0' + hr;
+
+      if (min < 10) min = '0' + min;
+
+      if (seg < 10) seg = '0' + seg;
+
+      // associar os valores hora, minutos e segundos com hr, min e seg;
+      horas.textContent = hr;
+      minutos.textContent = min; 
+      segundos.textContent = seg; 
+    });
+ 
+  </script>
+  
+</body>
+</html>
