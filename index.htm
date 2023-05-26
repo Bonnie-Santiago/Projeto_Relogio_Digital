@@ -16,14 +16,14 @@
       height: 100vh;
       background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
       display: flex;
-      align-items: center; /* alinhou intens da pagina no lado esquerdo da tela;*/;
-      justify-content: center; /* alinhou intens no centro da página*/
+      align-items: center; 
+      justify-content: center; 
     }
 
     .relogio {
-      display: flex; /* alinhou intens os lada a lado*/
+      display: flex; 
       align-items: center;
-      justify-content: space-around;  /* da espaçamento entre os intens pra não fica colados*/
+      justify-content: space-around;  
       height: 200px;
       width: 550px;
       background: transparent;
@@ -35,23 +35,22 @@
       height: 170px;
       width: 150px;
       display: flex;
-      flex-direction: column; /* alinha os intens um abaixo do outro*/
-      align-items: center; /* alinha os intens no centro em cima*/
-      justify-content: center; /* alinha os intens no centro da div bem no meio*/
-      /*font-size: 60px;  tamanho da fonte vai fica por conta do span*/
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
       color: #fff;
       background: rgba(5, 5, 5, 0.9);
       box-shadow: 5px 5px 15px rgba(0,0,0, .7);
       border-radius: 7px;
-      letter-spacing: 3px; /* espaçamento da letra */
+      letter-spacing: 3px;
     }
 
-    .relogio span { /* estilizando os mostradores do relogio*/
-      font-weight: bolder;  /* engrossa o tamanho da fonte*/
+    .relogio span {
+      font-weight: bolder;
       font-size: 60px; 
     }
 
-    .relogio span.tempo { /* estilizando somente span tempo os nomes*/
+    .relogio span.tempo {
       font-size: 10px;
     }
 
@@ -81,7 +80,7 @@
     const minutos = document.querySelector('#minutos');
     const segundos = document.querySelector('#segundos');
 
-    const relogio = setInterval(function time() {  // função tempo que vai pegar os dados da hora;
+    const relogio = setInterval(function time() {  // função tempo que vai pegar os dados da hora do computador;
       let dateToday = new Date(); // criada a variavel pegar a hora da data de hoje
       let hr = dateToday.getHours();
       let min = dateToday.getMinutes();
